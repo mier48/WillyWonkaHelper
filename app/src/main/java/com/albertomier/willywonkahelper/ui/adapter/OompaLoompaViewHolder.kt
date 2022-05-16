@@ -1,10 +1,13 @@
 package com.albertomier.willywonkahelper.ui.adapter
 
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.albertomier.willywonkahelper.R
 import com.albertomier.willywonkahelper.databinding.OompaLoompaBinding
 import com.albertomier.willywonkahelper.domain.model.OompaLoompa
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 class OompaLoompaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -23,7 +26,12 @@ class OompaLoompaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         }
         binding.ageCircle.text = oompaLoompa.age
 
-        Glide.with(context).load(oompaLoompa.image).centerCrop().into(binding.image)
+        Glide.with(context).load(oompaLoompa.image)
+            .placeholder(ContextCompat.getDrawable(context, R.drawable.placeholder)).centerCrop()
+            .diskCacheStrategy(
+                DiskCacheStrategy.ALL
+            )
+            .into(binding.image)
 
         itemView.setOnClickListener {
             onClickListener(oompaLoompa)

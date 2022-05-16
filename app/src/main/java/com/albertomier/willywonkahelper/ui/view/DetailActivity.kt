@@ -3,11 +3,13 @@ package com.albertomier.willywonkahelper.ui.view
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import com.albertomier.willywonkahelper.R
 import com.albertomier.willywonkahelper.databinding.ActivityDetailBinding
 import com.albertomier.willywonkahelper.ui.viewmodel.DetailViewModel
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -49,7 +51,12 @@ class DetailActivity : AppCompatActivity() {
             }
             binding.ageCircle.text = it.age
 
-            Glide.with(this@DetailActivity).load(it.image).centerCrop().into(binding.image)
+            Glide.with(this@DetailActivity).load(it.image)
+                .placeholder(ContextCompat.getDrawable(this@DetailActivity, R.drawable.placeholder))
+                .diskCacheStrategy(
+                    DiskCacheStrategy.ALL
+                )
+                .centerCrop().into(binding.image)
         })
     }
 
