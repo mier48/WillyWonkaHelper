@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.albertomier.willywonkahelper.R
 import com.albertomier.willywonkahelper.databinding.ActivityDetailBinding
 import com.albertomier.willywonkahelper.ui.viewmodel.DetailViewModel
 import com.bumptech.glide.Glide
@@ -42,9 +43,9 @@ class DetailActivity : AppCompatActivity() {
             binding.profession.text = it.profession
             binding.country.text = it.country
             if (it.gender == "M") {
-                binding.gender.text = "Male"
+                binding.gender.text = getString(R.string.male)
             } else {
-                binding.gender.text = "Female"
+                binding.gender.text = getString(R.string.female)
             }
             binding.ageCircle.text = it.age
 

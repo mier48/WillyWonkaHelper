@@ -23,7 +23,7 @@ import com.albertomier.willywonkahelper.ui.viewmodel.ListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class MainFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -113,39 +113,39 @@ class HomeFragment : Fragment() {
             radioGroupProfession.addView(radioButton)
         }
 
-        val radioButton1 = RadioButton(context)
-        radioButton1.id = View.generateViewId()
-        radioButton1.text = "Male"
+        val maleRadioButton = RadioButton(context)
+        maleRadioButton.id = View.generateViewId()
+        maleRadioButton.text = getString(R.string.male)
 
         filtersChecked.map { filter ->
             if (filter == "M") {
-                radioButton1.isChecked = true
+                maleRadioButton.isChecked = true
             }
         }
 
-        radioGroupGender.addView(radioButton1)
+        radioGroupGender.addView(maleRadioButton)
 
-        val radioButton2 = RadioButton(context)
-        radioButton2.id = View.generateViewId()
-        radioButton2.text = "Female"
+        val femaleRadioButton = RadioButton(context)
+        femaleRadioButton.id = View.generateViewId()
+        femaleRadioButton.text = getString(R.string.female)
 
         filtersChecked.map { filter ->
             if (filter == "F") {
-                radioButton2.isChecked = true
+                femaleRadioButton.isChecked = true
             }
         }
 
-        radioGroupGender.addView(radioButton2)
+        radioGroupGender.addView(femaleRadioButton)
 
         val builder = AlertDialog.Builder(context).setView(dialogView)
 
-        builder.setPositiveButton("Filtrar") { _, _ ->
+        builder.setPositiveButton(getString(R.string.filter)) { _, _ ->
             filtersChecked = arrayListOf()
 
-            if (radioButton1.isChecked) {
+            if (maleRadioButton.isChecked) {
                 filtersChecked.add("M")
             }
-            if (radioButton2.isChecked) {
+            if (femaleRadioButton.isChecked) {
                 filtersChecked.add("F")
             }
 
@@ -158,7 +158,7 @@ class HomeFragment : Fragment() {
             listViewModel.addFilter(filtersChecked)
         }
 
-        builder.setNegativeButton("Cancelar", null)
+        builder.setNegativeButton(getString(R.string.cancel), null)
         builder.setCancelable(false)
 
         val dialog = builder.create()
