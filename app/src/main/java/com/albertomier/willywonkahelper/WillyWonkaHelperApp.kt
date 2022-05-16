@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.albertomier.willywonkahelper.core.Preference
 import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 
 @HiltAndroidApp
 class WillyWonkaHelperApp : Application() {
@@ -14,7 +15,7 @@ class WillyWonkaHelperApp : Application() {
 
     companion object {
         lateinit var preference: Preference
-        private var instance: WillyWonkaHelperApp? = null
+        var instance: WillyWonkaHelperApp? = null
 
         fun applicationContext(): Context {
             return instance!!.applicationContext
