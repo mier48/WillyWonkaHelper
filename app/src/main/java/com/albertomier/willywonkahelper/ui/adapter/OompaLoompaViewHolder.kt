@@ -20,9 +20,9 @@ class OompaLoompaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         binding.profession.text = oompaLoompa.profession
         binding.country.text = oompaLoompa.country
         if (oompaLoompa.gender == "M") {
-            binding.gender.text = "Male"
+            binding.gender.text = context.getString(R.string.male)
         } else {
-            binding.gender.text = "Female"
+            binding.gender.text = context.getString(R.string.female)
         }
         binding.ageCircle.text = oompaLoompa.age
 
