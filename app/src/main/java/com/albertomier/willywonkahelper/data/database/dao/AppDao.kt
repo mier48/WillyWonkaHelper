@@ -15,7 +15,7 @@ interface AppDao {
     suspend fun getOompaLoompaById(oompaLoompaId: Int): OompaLoompaEntity
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(quotes:List<OompaLoompaEntity>)
+    suspend fun insertAll(quotes: List<OompaLoompaEntity>)
 
     @Query("DELETE FROM oompa_loompa_table")
     suspend fun deleteAll()

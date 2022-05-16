@@ -16,5 +16,8 @@ data class OompaLoompa(
     var height: String
 )
 
-fun OompaLoompaModel.toDomain() = OompaLoompa(id, firstName, lastName, gender, image, profession, email, age, country, height)
-fun OompaLoompaEntity.toDomain() = OompaLoompa(id, firstName, lastName, gender, image, profession, email, age, country, height)
+fun OompaLoompaModel.toDomain() =
+    OompaLoompa(id, firstName, lastName, gender, image, profession, email, age, country, height)
+
+fun OompaLoompaEntity.toDomain() =
+    OompaLoompa(id, firstName, lastName, gender, image, profession, email, age, country, height)

@@ -3,7 +3,6 @@ package com.albertomier.willywonkahelper.ui.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.albertomier.willywonkahelper.domain.GetOompaLoompa
 import com.albertomier.willywonkahelper.domain.GetOompaLoompaById
 import com.albertomier.willywonkahelper.domain.model.OompaLoompa
 import dagger.hilt.android.lifecycle.HiltViewModel

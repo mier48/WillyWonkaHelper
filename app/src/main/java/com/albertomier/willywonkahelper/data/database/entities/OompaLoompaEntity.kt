@@ -1,6 +1,5 @@
 package com.albertomier.willywonkahelper.data.database.entities
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.albertomier.willywonkahelper.domain.model.OompaLoompa
@@ -21,4 +20,15 @@ data class OompaLoompaEntity(
     @SerializedName("height") var height: String
 )
 
-fun OompaLoompa.toDatabase() = OompaLoompaEntity(id, firstName, lastName, gender, image, profession, email, age, country, height)
+fun OompaLoompa.toDatabase() = OompaLoompaEntity(
+    id,
+    firstName,
+    lastName,
+    gender,
+    image,
+    profession,
+    email,
+    age,
+    country,
+    height
+)

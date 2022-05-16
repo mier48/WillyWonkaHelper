@@ -55,7 +55,8 @@ class CustomTextView : AppCompatTextView {
                     typeface = Typeface.createFromAsset(context.assets, "fonts/Taviraj-Italic.ttf")
                 }
                 SEMIBOLD -> {
-                    typeface = Typeface.createFromAsset(context.assets, "fonts/Taviraj-SemiBold.ttf")
+                    typeface =
+                        Typeface.createFromAsset(context.assets, "fonts/Taviraj-SemiBold.ttf")
                 }
                 MEDIUM -> {
                     typeface = Typeface.createFromAsset(context.assets, "fonts/Taviraj-Medium.ttf")

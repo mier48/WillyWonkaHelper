@@ -41,8 +41,14 @@ class DetailActivity : AppCompatActivity() {
             binding.name.text = name
             binding.profession.text = it.profession
             binding.country.text = it.country
+            if (it.gender == "M") {
+                binding.gender.text = "Male"
+            } else {
+                binding.gender.text = "Female"
+            }
+            binding.ageCircle.text = it.age
 
-            Glide.with(this@DetailActivity).load(it.image).centerCrop().into(binding.image);
+            Glide.with(this@DetailActivity).load(it.image).centerCrop().into(binding.image)
         })
     }
 

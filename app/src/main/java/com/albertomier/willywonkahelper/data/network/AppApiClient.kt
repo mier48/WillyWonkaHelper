@@ -11,5 +11,5 @@ interface AppApiClient {
     suspend fun getAll(): Response<OompaLoompaResponse>
 
     @GET("oompa-loompas/{id}")
-    suspend fun getById(@Path("id") id: Int,): OompaLoompaModel
+    suspend fun getById(@Path("id") id: Int): OompaLoompaModel
 }

@@ -3,7 +3,6 @@ package com.albertomier.willywonkahelper.data
 import com.albertomier.willywonkahelper.data.database.dao.AppDao
 import com.albertomier.willywonkahelper.data.database.entities.OompaLoompaEntity
 import com.albertomier.willywonkahelper.data.model.OompaLoompaModel
-import com.albertomier.willywonkahelper.data.model.OompaLoompaProvider
 import com.albertomier.willywonkahelper.data.network.AppService
 import com.albertomier.willywonkahelper.domain.model.OompaLoompa
 import com.albertomier.willywonkahelper.domain.model.toDomain
@@ -33,11 +32,11 @@ class OompaLoompaRepository @Inject constructor(
         return response.toDomain()
     }
 
-    suspend fun addOompaLoompas(oompaLoompas: List<OompaLoompaEntity>){
+    suspend fun addOompaLoompas(oompaLoompas: List<OompaLoompaEntity>) {
         appDao.insertAll(oompaLoompas)
     }
 
-    suspend fun clearAll(){
+    suspend fun clearAll() {
         appDao.deleteAll()
     }
 }

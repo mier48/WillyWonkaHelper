@@ -5,6 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".ui.view.DetailActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -29,26 +30,43 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/standard">
+            android:layout_margin="@dimen/big">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Media -->
                 <ImageView
                     android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:layout_height="194dp" />
 
-                <LinearLayout
+                <RelativeLayout
+                    android:id="@+id/ageCircleLayout"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="@dimen/standard"
+                    android:background="@drawable/circle">
+
+                    <TextView
+                        android:id="@+id/ageCircle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold|italic" />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_below="@id/image"
                     android:padding="@dimen/big">
 
-                    <!-- Title, secondary and supporting text -->
                     <TextView
                         android:id="@+id/name"
                         android:layout_width="wrap_content"
@@ -59,6 +77,7 @@
                         android:id="@+id/profession"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/name"
                         android:layout_marginTop="@dimen/standard"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary" />
@@ -67,13 +86,24 @@
                         android:id="@+id/country"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/profession"
                         android:layout_marginTop="@dimen/big"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary" />
 
-                </LinearLayout>
+                    <TextView
+                        android:id="@+id/gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/name"
+                        android:layout_alignBottom="@id/name"
+                        android:layout_alignParentEnd="true"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="?android:attr/textColorSecondary" />
 
-            </LinearLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
