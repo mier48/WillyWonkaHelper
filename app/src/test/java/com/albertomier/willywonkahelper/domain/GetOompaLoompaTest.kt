@@ -1,6 +1,5 @@
 package com.albertomier.willywonkahelper.domain
 
-import com.albertomier.willywonkahelper.WillyWonkaHelperApp
 import com.albertomier.willywonkahelper.data.OompaLoompaRepository
 import com.albertomier.willywonkahelper.domain.model.OompaLoompa
 import io.mockk.MockKAnnotations

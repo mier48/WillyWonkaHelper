@@ -4,7 +4,6 @@ import android.app.Application
 import android.content.Context
 import com.albertomier.willywonkahelper.core.Preference
 import dagger.hilt.android.HiltAndroidApp
-import javax.inject.Inject
 
 @HiltAndroidApp
 class WillyWonkaHelperApp : Application() {

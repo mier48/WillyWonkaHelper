@@ -7,9 +7,9 @@ import android.util.Log
 import com.albertomier.willywonkahelper.WillyWonkaHelperApp
 
 object Utils {
-    fun isOnline(): Boolean {
+    fun isOnline(context: Context = WillyWonkaHelperApp.applicationContext()): Boolean {
         val connectivityManager =
-            WillyWonkaHelperApp.applicationContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         if (connectivityManager != null) {
             val capabilities =
                 connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
